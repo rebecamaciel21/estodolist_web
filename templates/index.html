@@ -14,8 +14,9 @@
                     {% if tarefa.status == "Concluída" %}
                         line-through text-slate-400
                     {% endif %}>
-                    {{ tarefa.nome tarefa }}
+                    {{ tarefa.nome_tarefa }}
                     </span>
+
                 <span class="block font-medium">{{ tarefa.nome_tarefa }}</span>
 
                 {# descrição aqui #}
@@ -24,12 +25,8 @@
                 {% endif %}
                 
                 <div class="flex flex-wrap items-center gap-2 text-sm">
-                    <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">
-                        {{ tarefa.categoria }}
-                    </span>
-                    <span class="text-slate-500">
-                        {{ tarefa.data_prazo.strftime("%d/%m/%Y") }}
-                    </span>
+                    <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">{{ tarefa.categoria }}</span>
+                    <span class="text-slate-500">{{ tarefa.data_prazo.strftime("%d/%m/%Y") }}</span>
               
                 {# prioridade aqui #}
                 <span class="px-2 py-1 rounded-full
@@ -42,6 +39,7 @@
                     {% elif tarefa.prioridade == "MEDIA" %} Média
                     {% else %} Baixa {% endif %}
                 </span>
+
                 {# status aqui #}
                 <span class="px-2 py-1 rounded-full
                     {% if tarefa.status == "Concluída" %}
@@ -53,6 +51,8 @@
                     {% endif %}">
                     {{ tarefa.status }}
                 </span>
+            </div>
+        </div>
             {# botões aqui #}
         </li>
         {# lista vazia aqui #}
