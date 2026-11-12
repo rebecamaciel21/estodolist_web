@@ -18,7 +18,16 @@
                     <span class="text-slate-500">
                         {{ tarefa.data_prazo.strftime("%d/%m/%Y") }}
                     </span>
-                    {# prioridade aqui #}
+                    <span class="px-2 py-1 rounded-full
+                        {% if tarefa.prioridade == "ALTA" %}bg-red-100 text-red-700
+                        {% elif tarefa.prioridade == "MEDIA" %}bg-amber-100 text-amber-700
+                        {% else %}bg-green-100 text-green-700
+                        {% endif %}">
+                        Prioridade:
+                        {% if tarefa.prioridade == "ALTA" %}Alta
+                        {% elif tarefa.prioridade == "MEDIA" %} Média
+                        {% else %} Baixa {% endif %}
+                        </span>
                     {# status aqui #}
                 </div>
             </div>
